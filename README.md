@@ -34,75 +34,7 @@ Memory and disk requirements for initial synchronization of **Bitcoin mainnet** 
 Other coins should have lower requirements, depending on the size of their block chain. Note that fast SSD disks are highly
 recommended.
 
-```mermaid
-%%{ init: { 'flowchart': { 'curve': 'bumpX' } } }%%
-graph LR;
-linkStyle default opacity:0.5
-  address_book_controller(["@trezor/address-book-controller"]);
-  announcement_controller(["@trezor/announcement-controller"]);
-  approval_controller(["@trezor/approval-controller"]);
-  assets_controllers(["@trezor/assets-controllers"]);
-  base_controller(["@trezor/base-controller"]);
-  composable_controller(["@trezor/composable-controller"]);
-  controller_utils(["@trezor/controller-utils"]);
-  ens_controller(["@trezor/ens-controller"]);
-  gas_fee_controller(["@trezor/gas-fee-controller"]);
-  keyring_controller(["@trezor/keyring-controller"]);
-  logging_controller(["@trezor/logging-controller"]);
-  message_manager(["@trezor/message-manager"]);
-  name_controller(["@trezor/name-controller"]);
-  network_controller(["@trezor/network-controller"]);
-  notification_controller(["@trezor/notification-controller"]);
-  permission_controller(["@trezor/permission-controller"]);
-  phishing_controller(["@trezor/phishing-controller"]);
-  preferences_controller(["@trezor/preferences-controller"]);
-  rate_limit_controller(["@trezor/rate-limit-controller"]);
-  signature_controller(["@trezor/signature-controller"]);
-  transaction_controller(["@trezor/transaction-controller"]);
-  address_book_controller --> base_controller;
-  address_book_controller --> controller_utils;
-  announcement_controller --> base_controller;
-  approval_controller --> base_controller;
-  assets_controllers --> approval_controller;
-  assets_controllers --> base_controller;
-  assets_controllers --> controller_utils;
-  assets_controllers --> network_controller;
-  assets_controllers --> preferences_controller;
-  composable_controller --> base_controller;
-  ens_controller --> base_controller;
-  ens_controller --> controller_utils;
-  ens_controller --> network_controller;
-  gas_fee_controller --> base_controller;
-  gas_fee_controller --> controller_utils;
-  gas_fee_controller --> network_controller;
-  keyring_controller --> base_controller;
-  keyring_controller --> message_manager;
-  keyring_controller --> preferences_controller;
-  logging_controller --> base_controller;
-  logging_controller --> controller_utils;
-  message_manager --> base_controller;
-  message_manager --> controller_utils;
-  name_controller --> base_controller;
-  network_controller --> base_controller;
-  network_controller --> controller_utils;
-  notification_controller --> base_controller;
-  permission_controller --> approval_controller;
-  permission_controller --> base_controller;
-  permission_controller --> controller_utils;
-  phishing_controller --> base_controller;
-  phishing_controller --> controller_utils;
-  preferences_controller --> base_controller;
-  preferences_controller --> controller_utils;
-  rate_limit_controller --> base_controller;
-  signature_controller --> approval_controller;
-  signature_controller --> base_controller;
-  signature_controller --> controller_utils;
-  signature_controller --> message_manager;
-  transaction_controller --> approval_controller;
-  transaction_controller --> base_controller;
-  transaction_controller --> controller_utils;
-  transaction_controller --> network_controller;
-```
+
 
 User installation guide is [here](<https://wiki.trezor.io/User_manual:Running_a_local_instance_of_Trezor_Wallet_backend_(Blockbook)>).
 
